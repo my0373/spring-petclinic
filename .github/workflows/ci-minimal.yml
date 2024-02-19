@@ -68,11 +68,11 @@ jobs:
       
       # In order to upload the image to Artifactory, we'll retag the image.
       - name: Retag image with jfrog repo
-        run: docker tag spring-petclinic:3.1.0-SNAPSHOT matthewy.jfrog.io/petclinic-docker/spring-petclinic:3.1.0-SNAPSHOT
+        run: docker tag spring-petclinic:3.2.0-SNAPSHOT matthewy.jfrog.io/petclinic-docker/spring-petclinic:3.2.0-SNAPSHOT
   
       # We push the image into artifactory
       - name: Push Docker Image to Artifactory
         env:
-          IMAGE_NAME: matthewy.jfrog.io/petclinic-docker/spring-petclinic:3.1.0-SNAPSHOT
+          IMAGE_NAME: matthewy.jfrog.io/petclinic-docker/spring-petclinic:3.2.0-SNAPSHOT
         run:
           jf docker push $IMAGE_NAME
